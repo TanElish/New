@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CookBook Hub - Interactive Recipe Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">🍳 CookBook Hub</div>
+      <ul class="nav-links">
+        <li><a href="#recipes">Recipes</a></li>
+        <li><a href="#calculator">Servings Calculator</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+      </ul>
+      <!-- Extra #1: Dynamic Dark/Light Theme Toggle -->
+      <button id="theme-toggle" class="btn-toggle">🌙 Dark Mode</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Banner -->
+    <section class="hero">
+      <h1>Discover & Plan Delicious Meals</h1>
+      <p>Explore handcrafted recipes, scale serving sizes dynamically, and save your favorite dishes.</p>
+    </section>
+
+    <!-- Extra #2: Category Filterable CSS Grid Gallery -->
+    <section id="recipes" class="section">
+      <h2>Featured Recipes</h2>
+      
+      <div class="filter-controls">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="vegan">Vegan</button>
+        <button class="filter-btn" data-category="quick">Quick (<30m)</button>
+      </div>
+
+      <div class="recipes-grid">
+        <div class="recipe-card" data-category="vegan">
+          <div class="card-badge">Vegan</div>
+          <h3>Avocado Grain Bowl</h3>
+          <p>Prep Time: 15 mins | Level: Easy</p>
+          <p class="desc">A healthy blend of quinoa, fresh avocado, and tahini dressing.</p>
+        </div>
+
+        <div class="recipe-card" data-category="quick">
+          <div class="card-badge">Quick</div>
+          <h3>Garlic Butter Pasta</h3>
+          <p>Prep Time: 20 mins | Level: Easy</p>
+          <p class="desc">Classic Italian spaghetti tossed in roasted garlic and olive oil.</p>
+        </div>
+
+        <div class="recipe-card" data-category="vegan">
+          <div class="card-badge">Vegan</div>
+          <h3>Berry Smooth Bowl</h3>
+          <p>Prep Time: 10 mins | Level: Beginner</p>
+          <p class="desc">Packed with antioxidants, chia seeds, and fresh berries.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Extra #3: Dynamic Ingredient & Serving Size Calculator -->
+    <section id="calculator" class="section calc-section">
+      <h2>Interactive Servings Adjuster</h2>
+      <p>Adjust the slider to scale the ingredient quantities in real time:</p>
+      
+      <div class="calc-box">
+        <label for="servings-range">Servings: <strong id="servings-count">2</strong></label>
+        <input type="range" id="servings-range" min="1" max="10" value="2">
+
+        <ul class="ingredient-list">
+          <li><span class="qty" data-base="100">100</span>g Pasta / Oats</li>
+          <li><span class="qty" data-base="1.5">1.5</span> tbsp Olive Oil</li>
+          <li><span class="qty" data-base="2">2</span> Cloves Garlic / Fruits</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Extra #4: Newsletter Registration with Live Validation -->
+    <section id="newsletter" class="section">
+      <h2>Subscribe for Weekly Recipes</h2>
+      <form id="subscribe-form" novalidate>
+        <div class="form-group">
+          <label for="user-email">Email Address:</label>
+          <input type="email" id="user-email" placeholder="you@example.com" required>
+          <span class="error-msg" id="email-error"></span>
+        </div>
+        <button type="submit" class="btn-submit">Join Community</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CookBook Hub. Built with Semantic HTML5 & CSS3.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
